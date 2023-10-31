@@ -2,7 +2,7 @@
 def pow(a, b):
     value = 0
     if b < 0:
-       value = 1 / pow(a, -b)
+        value = 1 / pow(a, -b)
     elif b == 0:
         value = 1
     else:

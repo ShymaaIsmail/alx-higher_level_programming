@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-from hidden_4 import hidden_4
+import hidden_4
+
 if __name__ == "__main__":
-    for mod_name in dir(hidden_4):
-        if not mod_name.startswith('__'):
-            print("{}".format(mod_name))
+    names = dir(hidden_4)
+    sorted_names = sorted(name for name in names if not name.startswith("__"))
+    for name in sorted_names:
+        print(name)

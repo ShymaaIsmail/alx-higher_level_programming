@@ -8,7 +8,7 @@ def divisible_by_2(my_list=[]):
                 bool_list[idx] = True
             else:
                 bool_list[idx] = False
-            idx += 1
+        idx += 1
         return bool_list
     else:
         return my_list

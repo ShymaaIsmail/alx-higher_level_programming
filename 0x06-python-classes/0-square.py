@@ -1,6 +1,11 @@
 #!/usr/bin/python3
-"""Square class summary"""
+"""Square class summary
+"""
 
 
 class Square:
-    pass
+    """square constructor
+    """
+
+    def __init__(self):
+        pass

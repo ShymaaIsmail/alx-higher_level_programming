@@ -40,13 +40,14 @@ class Square:
     """
 
     def my_print(self):
-        if self._Square__size == 0:
+        if self.__size == 0:
             print()
         else:
-            for i in range(0, self.size):
-                for j in range(0, self.size):
-                    print("#", end="")
+            for i in range(self.__position[1]):
                 print()
+            for i in range(self.__size):
+                print(' ' * self.__position[0] + '#' * self.__size)
+
     """position getter
     """
     @property

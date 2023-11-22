@@ -7,12 +7,13 @@ class Square:
     """square constructor
     """
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
         self._Square__size = size
+        self._Square__position = position
     """area
     """
 
@@ -46,3 +47,18 @@ class Square:
                 for j in range(0, self.size):
                     print("#", end="")
                 print()
+    """position getter
+    """
+    @property
+    def position(self):
+        return self._Square__position
+    """position setter
+    """
+    @position.setter
+    def position(self, value):
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 elements")
+
+        if not all(isinstance(val, int) and val >= 0 for val in value):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self._Square__position = value

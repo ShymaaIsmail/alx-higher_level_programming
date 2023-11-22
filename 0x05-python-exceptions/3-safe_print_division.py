@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def safe_print_division(a, b):
-  int c = None
+  c = None
   try:
     c = a / b
   except:

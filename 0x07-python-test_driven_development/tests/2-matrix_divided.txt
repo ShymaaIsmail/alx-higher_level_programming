@@ -52,7 +52,7 @@ Now use it:
     TypeError: div must be a number
     >>> matrix_divided([[9]], float('inf'))
     [[0.0]]
-    >>> matrix_divided([["9",8][9,"9"]], 8) # doctest: +IGNORE_EXCEPTION_DETAIL
+    >>> matrix_divided([["9",8],[9,"9"]], 8) # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats

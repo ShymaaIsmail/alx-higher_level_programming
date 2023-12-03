@@ -24,14 +24,14 @@ def matrix_divided(matrix, div):
     """
     result = [[]]
     row_size = 0
-    if not isinstance(div, int) or not isinstance(div, float):
+    if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
     for row in matrix:
         new_row = []
         for column in row:
-            if not isinstance(column, int) or not isinstance(column, float):
+            if not isinstance(column, int) and not isinstance(column, float):
                 raise TypeError("matrix must be a matrix (list of lists)"
                                 "of integers/floats")
             else:

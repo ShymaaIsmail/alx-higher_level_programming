@@ -50,4 +50,6 @@ Now use it:
     Traceback (most recent call last):
         ...
     TypeError: div must be a number
+    >>> matrix_divided([[9]], float('inf'))
+    [[0.0]]
 

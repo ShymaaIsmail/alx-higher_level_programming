@@ -38,10 +38,10 @@ Now use it:
     Traceback (most recent call last):
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
-    >>> matrix_divided([[]]) # doctest: +IGNORE_EXCEPTION_DETAIL
+    >>> matrix_divided([[]])
     Traceback (most recent call last):
         ...
-    TypeError: div must be a number
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
     >>> matrix = [[10, 8], [5, 10]]
     >>> div = 2
     >>> len(matrix_divided(matrix, div)) == len(matrix)

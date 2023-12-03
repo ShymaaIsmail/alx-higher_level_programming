@@ -47,4 +47,9 @@ Now use it:
     Traceback (most recent call last):
         ...
     OverflowError: int too large to convert to float
-
+    >>> b = float("inf")
+    >>> a = 10
+    >>> add_integer(a, b)  # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    OverflowError: int too large to convert to float

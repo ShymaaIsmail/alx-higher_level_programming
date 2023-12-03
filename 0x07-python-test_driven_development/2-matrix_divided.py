@@ -30,12 +30,14 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
     for row in matrix:
         new_row = []
+        if type(row) is not list:
+            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
         for column in row:
             if not isinstance(column, int) and not isinstance(column, float):
                 raise TypeError("matrix must be a matrix (list of lists)"
                                 "of integers/floats")
             else:
-                new_row.append(float("{:.2f}".format(column / div)))
+                new_row.append(round(column / div, 2))
         if row_size == 0:
             row_size = len(new_row)
         if len(row) != row_size:

@@ -22,7 +22,7 @@ def matrix_divided(matrix, div):
     Returns:
         _type_: _description_
     """
-    result = [[]]
+    result = []
     row_size = 0
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")

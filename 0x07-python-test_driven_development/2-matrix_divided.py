@@ -37,7 +37,7 @@ def matrix_divided(matrix, div):
                 raise TypeError("matrix must be a matrix (list of lists)"
                                 "of integers/floats")
             else:
-                new_row.append(round(column / div, 2))
+                new_row.append(float("{:.2f}".format(column / div)))
         if row_size == 0:
             row_size = len(new_row)
         if len(row) != row_size:

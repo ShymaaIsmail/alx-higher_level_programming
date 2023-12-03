@@ -37,3 +37,7 @@ Now use it:
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+    >>> add_integer()# doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer

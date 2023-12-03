@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+
+
 """ This is 0-add_integer doc string
 It it for task 0 in alx
-test driven development 
+test driven development
 project
 """
+
+
 def add_integer(a, b=98):
     """return sum of 2 integers
 
@@ -18,9 +22,9 @@ def add_integer(a, b=98):
     Returns:
         int: sum
     """
-    if not isinstance(a,int) and not isinstance(a, float):
+    if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError("a must be an integer")
-    elif not isinstance(b,int) and not isinstance(b, float):
+    elif not isinstance(b, int) and not isinstance(b, float):
         raise TypeError("b must be an integer")
 
     return int(a) + int(b)

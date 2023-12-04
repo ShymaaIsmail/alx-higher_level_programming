@@ -89,4 +89,4 @@ class Rectangle(BaseGeometry):
         Returns:
             _type_: _description_
         """
-        return self.__width * self.__height
+        return int(self.__width * self.__height)

@@ -1,95 +1,70 @@
-============================
- Doctest for 7-base_geometry
-============================
+The ``7-base_geometry`` module
+======================
 
-Test if the module has docstring
-================================
+Using ``BaseGeometry``
+-------------------
 
+This is an 7-base_geometry text file in reStructuredText format.  First import
+``BaseGeometry``  the ``7-base_geometry`` module:
 
-::
-        >>> m = __import__("7-base_geometry").__doc__
-        >>> len(m) > 0
-        True
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg_obj = BaseGeometry()
 
-Test if the Class MyList has docstring
-==============================================
+Now use it:
 
-
-::
-
-        >>> c = __import__("7-base_geometry").BaseGeometry.__doc__
-        >>> len(c) > 0
-        True
-
-Test if the function area has docstring
-=======================================
-
-
-::
-
-        >>> f = __import__("7-base_geometry").BaseGeometry.area.__doc__
-        >>> len(f) > 0
-        True
-
-
-Test if the function integer_validator has docstring
-====================================================
-
-
-::
-
-        >>> f = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
-        >>> len(f) > 0
-        True
-
-
-
-Import the class BaseGeometry
-=================================
-
-
-::
-
-        >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
-
-
-
-Test area function:
-=========================
-
-
-::
-        >>> bg = BaseGeometry()
-	>>> bg.area()
+  	>>> bg_obj.area()
         Traceback (most recent call last):
                 ...
         Exception: area() is not implemented
 
+    >>> bg_obj.integer_validator("name")
+    Traceback (most recent call last):
+      ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+    
+    >>> bg_obj.integer_validator()
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
+    >>> bg_obj.integer_validator("integer")
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
-Test is_integer function:
-=========================
+    >>> bg_obj.integer_validator("integer", 1, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+    >>> bg_obj.integer_validator("name", 0)
+    Traceback (most recent call last):
+      ...
+    ValueError: name must be greater than 0
 
+    >>> bg_obj.integer_validator("name", -888)
+    Traceback (most recent call last):
+      ...
+    ValueError: name must be greater than 0
 
-::
-        >>> bg = BaseGeometry()
-	>>> bg.integer_validator("my_int", "John")
-        Traceback (most recent call last):
-                ...
-        TypeError: my_int must be an integer
+    >>> bg_obj.integer_validator("name", "kk")
+    Traceback (most recent call last):
+      ...
+    TypeError: name must be an integer
 
+    >>> bg_obj.integer_validator("name", 89.99999)
+    Traceback (most recent call last):
+      ...
+    TypeError: name must be an integer
+    >>> bg_obj.integer_validator("data", [-4, 5, 3])
+    Traceback (most recent call last):
+    ...
+    TypeError: data must be an integer
+    >>> bg_obj.integer_validator("data", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: data must be an integer
+    >>> bg_obj.integer_validator("data", {3, 54})
+    Traceback (most recent call last):
+    ...
+    TypeError: data must be an integer
 
-::
-        >>> bg = BaseGeometry()
-	>>> bg.integer_validator("my_int", 0)
-        Traceback (most recent call last):
-                ...
-        ValueError: my_int must be greater than 0
-
-
-::
-        >>> bg = BaseGeometry()
-	>>> bg.integer_validator("my_int", -5220)
-        Traceback (most recent call last):
-                ...
-        ValueError: my_int must be greater than 0

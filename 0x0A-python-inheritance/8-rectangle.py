@@ -23,10 +23,7 @@ class Rectangle(BaseGeometry):
             width (_type_): _description_
             height (_type_): _description_
         """
-        try:
-            self.integer_validator("width", width)
-            self.integer_validator("height", height)
-            self.width = width
-            self.height = height
-        except (ValueError, TypeError) as e:
-            raise e
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.width = width
+        self.height = height

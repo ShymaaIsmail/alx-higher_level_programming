@@ -36,6 +36,10 @@ Now use it:
     >>> my_list.print_sorted()
     [-5, -1, 0, 3]
 
+    >>> my_list = MyList([-5, -5, 0, 3])
+    >>> my_list.print_sorted()
+    [-5, -5, 0, 3]
+
     >>> my_list = MyList(['apple', 'banana', 'cherry'])
     >>> my_list.print_sorted()
     ['apple', 'banana', 'cherry']
@@ -51,15 +55,16 @@ Now use it:
     >>> my_list = MyList([2, 2, None])
     >>> my_list.print_sorted() # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
-    ..
+        ...
     TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
     >>> my_list.append(NULL)
     Traceback (most recent call last):
+        ...
     NameError: name 'NULL' is not defined
 
     >>> my_list.append(int('inf')) +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
-    ..
+        ...
     ValueError: invalid literal for int() with base 10: 'inf'
 

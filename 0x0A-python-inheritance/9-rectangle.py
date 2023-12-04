@@ -45,6 +45,13 @@ class Rectangle(BaseGeometry):
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
+    def __rpr__(self):
+        """__rpr__
+        this is to return
+        str version of the rectangle
+        """
+        self.__str__()
+
     def area(self):
         """area
         this is to calculate th rectangel

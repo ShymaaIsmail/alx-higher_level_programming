@@ -2,6 +2,7 @@ The ``7-base_geometry`` module
 ======================
 
 Using ``BaseGeometry``
+
         >>> m = __import__("7-base_geometry").__doc__
         >>> len(m) > 0
         True

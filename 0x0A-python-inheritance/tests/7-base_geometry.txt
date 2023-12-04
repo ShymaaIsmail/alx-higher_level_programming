@@ -50,5 +50,16 @@ Now use it:
     Traceback (most recent call last):
       ...
     TypeError: name must be an integer
-
+    >>> bg_obj.integer_validator("data", [-4, 5, 3])
+    Traceback (most recent call last):
+    ...
+    TypeError: data must be an integer
+    >>> bg_obj.integer_validator("data", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: data must be an integer
+    >>> bg_obj.integer_validator("data", {3, 54})
+    Traceback (most recent call last):
+    ...
+    TypeError: data must be an integer
 

@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
 """
 This is 8-rectangle
 doc
@@ -7,6 +6,7 @@ task
 number 8
 """
 
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """

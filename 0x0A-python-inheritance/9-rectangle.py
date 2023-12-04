@@ -35,7 +35,7 @@ class Rectangle(BaseGeometry):
         stringfied version
         in a certain format
         """
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height)
 
     def __rpr__(self):
         """__rpr__

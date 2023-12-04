@@ -18,5 +18,5 @@ class MyList(list):
         print_sorted
 
         """
-        sorted_list = sorted(self)
+        sorted_list = sorted(list(self))
         print(sorted_list)

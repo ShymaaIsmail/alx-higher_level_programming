@@ -12,14 +12,6 @@ class MyList(list):
     Args:
         list (_type_): _description_
     """
-    def __init__(self):
-        """
-          init function
-          init function
-
-        """
-        super().__init__()
-  
     def print_sorted(self):
         """
         print_sorted

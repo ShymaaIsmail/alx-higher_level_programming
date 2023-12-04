@@ -12,15 +12,13 @@ class BaseGeometry:
     Base Class
     """
 
-
-    def __init__():
+    def __init__(self):
         """
         BaseGeometry
         init function
 
         """
         pass
-
 
     def area(self):
         """

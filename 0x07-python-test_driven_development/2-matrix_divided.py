@@ -26,7 +26,7 @@ def matrix_divided(matrix, div):
     row_size = 0
     if not matrix:
         raise TypeError("matrix must be a matrix (list of lists)"
-                        "of integers/floats")
+                        " of integers/floats")
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
     if div == 0:
@@ -36,7 +36,7 @@ def matrix_divided(matrix, div):
         for column in row:
             if not isinstance(column, int) and not isinstance(column, float):
                 raise TypeError("matrix must be a matrix (list of lists)"
-                                "of integers/floats")
+                                " of integers/floats")
             else:
                 new_row.append(float("{:.2f}".format(column / div)))
         if row_size == 0:

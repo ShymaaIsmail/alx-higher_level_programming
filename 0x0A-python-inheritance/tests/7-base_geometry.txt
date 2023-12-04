@@ -4,8 +4,8 @@ The ``7-base_geometry`` module
 Using ``BaseGeometry``
 -------------------
 
-This is an 7-base_geometry text file in reStructuredText format.  First import
-``BaseGeometry`` from the ``7-base_geometry`` module:
+This is an 7-base_geometry text file in reStructuredText format.  First 
+``BaseGeometry``  the ``7-base_geometry`` module:
 
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
     >>> bg_obj = BaseGeometry()

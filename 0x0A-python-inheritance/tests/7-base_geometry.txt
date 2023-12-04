@@ -1,70 +1,24 @@
-The ``7-base_geometry`` module
-======================
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Using ``BaseGeometry``
--------------------
+>>> bg = BaseGeometry()
 
-This is an 7-base_geometry text file in reStructuredText format.  First import
-``BaseGeometry``  the ``7-base_geometry`` module:
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
 
-    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-    >>> bg_obj = BaseGeometry()
+>>> try:
+...    bg.integer_validator("name", "John")
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
 
-Now use it:
+>>> try:
+...    bg.integer_validator("age", 0)
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
 
-  	>>> bg_obj.area()
-        Traceback (most recent call last):
-                ...
-        Exception: area() is not implemented
-
-    >>> bg_obj.integer_validator("name")
-    Traceback (most recent call last):
-      ...
-    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
-    
-    >>> bg_obj.integer_validator()
-    Traceback (most recent call last):
-        ...
-    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-    >>> bg_obj.integer_validator("integer")
-    Traceback (most recent call last):
-        ...
-    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
-
-    >>> bg_obj.integer_validator("integer", 1, 2)
-    Traceback (most recent call last):
-        ...
-    TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
-    >>> bg_obj.integer_validator("name", 0)
-    Traceback (most recent call last):
-      ...
-    ValueError: name must be greater than 0
-
-    >>> bg_obj.integer_validator("name", -888)
-    Traceback (most recent call last):
-      ...
-    ValueError: name must be greater than 0
-
-    >>> bg_obj.integer_validator("name", "kk")
-    Traceback (most recent call last):
-      ...
-    TypeError: name must be an integer
-
-    >>> bg_obj.integer_validator("name", 89.99999)
-    Traceback (most recent call last):
-      ...
-    TypeError: name must be an integer
-    >>> bg_obj.integer_validator("data", [-4, 5, 3])
-    Traceback (most recent call last):
-    ...
-    TypeError: data must be an integer
-    >>> bg_obj.integer_validator("data", True)
-    Traceback (most recent call last):
-    ...
-    TypeError: data must be an integer
-    >>> bg_obj.integer_validator("data", {3, 54})
-    Traceback (most recent call last):
-    ...
-    TypeError: data must be an integer
-
+>>> try:
+...    bg.integer_validator("distance", -4)
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] distance must be greater than 0

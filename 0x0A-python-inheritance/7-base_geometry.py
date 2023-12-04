@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
 This is 7-base_geometry
-module
 doc
+task
+number 7
 """
 
 
@@ -11,6 +12,8 @@ class BaseGeometry:
     BaseGeometry
     Base Class
     doc
+
+    
     """
 
     def __init__(self):

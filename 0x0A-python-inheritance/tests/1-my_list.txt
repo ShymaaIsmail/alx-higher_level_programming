@@ -53,7 +53,7 @@ Now use it:
     [2, 2, 10000000000000000000000000000000000000000000]
 
     >>> my_list = MyList([2, 2, None])
-    >>> my_list.print_sorted() # doctest: +IGNORE_EXCEPTION_DETAIL
+    >>> my_list.print_sorted() #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...
     TypeError: '<' not supported between instances of 'NoneType' and 'int'
@@ -63,7 +63,7 @@ Now use it:
         ...
     NameError: name 'NULL' is not defined
 
-    >>> my_list.append(int('inf')) +IGNORE_EXCEPTION_DETAIL
+    >>> my_list.append(int('inf')) #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...
     ValueError: invalid literal for int() with base 10: 'inf'

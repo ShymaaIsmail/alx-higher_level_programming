@@ -13,7 +13,6 @@ class BaseGeometry:
     Base Class
     doc
 
-    
     """
 
     def __init__(self):

@@ -12,6 +12,7 @@ class BaseGeometry:
     Base Class
     """
 
+
 def __init__():
     """
     BaseGeometry

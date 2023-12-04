@@ -4,77 +4,78 @@ The ``7-base_geometry`` module
 Using ``BaseGeometry``
 -------------------
  
-    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 Now use it:
+
     >>> bg_obj = BaseGeometry()
-  	>>> bg_obj.area()
+  	>>> bg_obj.area() #doctest: +IGNORE_EXCEPTION_DETAIL
         Traceback (most recent call last):
                 ...
         Exception: area() is not implemented
 
     >>> bg_obj = BaseGeometry()
-    >>> bg_obj.integer_validator("name")
+    >>> bg_obj.integer_validator("name") #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
       ...
     TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
     
     >>> bg_obj = BaseGeometry()
-    >>> bg_obj.integer_validator()
+    >>> bg_obj.integer_validator() #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...
     TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
     >>> bg_obj = BaseGeometry()
-    >>> bg_obj.integer_validator("integer")
+    >>> bg_obj.integer_validator("integer") #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...
     TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
     >>> bg_obj = BaseGeometry()
-    >>> bg_obj.integer_validator("integer", 1, 2)
+    >>> bg_obj.integer_validator("integer", 1, 2) #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...
     TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
    
     >>> bg_obj = BaseGeometry()
-    >>> bg_obj.integer_validator("name", 0)
+    >>> bg_obj.integer_validator("name", 0) #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
       ...
     ValueError: name must be greater than 0
 
     >>> bg_obj = BaseGeometry()
-    >>> bg_obj.integer_validator("name", -888)
+    >>> bg_obj.integer_validator("name", -888) #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
       ...
     ValueError: name must be greater than 0
 
     >>> bg_obj = BaseGeometry()
-    >>> bg_obj.integer_validator("name", "kk")
+    >>> bg_obj.integer_validator("name", "kk") #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
       ...
     TypeError: name must be an integer
 
     >>> bg_obj = BaseGeometry()
-    >>> bg_obj.integer_validator("name", 89.99999)
+    >>> bg_obj.integer_validator("name", 89.99999) #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
       ...
     TypeError: name must be an integer
 
     >>> bg_obj = BaseGeometry()
-    >>> bg_obj.integer_validator("data", [-4, 5, 3])
+    >>> bg_obj.integer_validator("data", [-4, 5, 3]) #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     ...
     TypeError: data must be an integer
 
     >>> bg_obj = BaseGeometry() 
-    >>> bg_obj.integer_validator("data", True)
+    >>> bg_obj.integer_validator("data", True) #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     ...
     TypeError: data must be an integer
 
     >>> bg_obj = BaseGeometry()
-    >>> bg_obj.integer_validator("data", {3, 54})
+    >>> bg_obj.integer_validator("data", {3, 54}) #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     ...
     TypeError: data must be an integer

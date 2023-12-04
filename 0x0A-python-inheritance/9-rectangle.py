@@ -6,45 +6,13 @@ task
 number 8
 """
 
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-class BaseGeometry:
-    """
-    BaseGeometry
-    Base Class
-    doc
+"""_summary_
 
-    """
-
-    def __init__(self):
-        """
-        BaseGeometry
-        init function
-        doc
-        """
-        pass
-
-    def area(self):
-        """
-        area function
-        for geometery
-        calculation
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """
-        integer_validator
-        validates value:
-        you can assume name is always a string
-        Args:
-            name (_type_): _description_
-            value (_type_): _description_
-        """
-
-        if value.__class__ != int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+Returns:
+    _type_: _description_
+"""
 
 
 class Rectangle(BaseGeometry):
@@ -56,7 +24,7 @@ class Rectangle(BaseGeometry):
     """
 
     def __init__(self, width, height):
-        """__init__
+        """_summary_
 
         Args:
             width (_type_): _description_
@@ -89,4 +57,4 @@ class Rectangle(BaseGeometry):
         Returns:
             _type_: _description_
         """
-        return int(self.__width * self.__height)
+        return self.__width * self.__height

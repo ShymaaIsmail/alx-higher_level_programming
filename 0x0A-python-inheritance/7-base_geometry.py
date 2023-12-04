@@ -10,13 +10,14 @@ class BaseGeometry:
     """
     BaseGeometry
     Base Class
+    doc
     """
 
     def __init__(self):
         """
         BaseGeometry
         init function
-
+        doc
         """
         pass
 
@@ -32,11 +33,6 @@ class BaseGeometry:
         """_summary_
         validates value:
         you can assume name is always a string
-        if value is not an integer: raise a TypeError exception
-        with the message <name> must be an integer
-        if value is less or equal to 0: raise a ValueError
-        exception with the message <name> must be greater than 0
-
         Args:
             name (_type_): _description_
             value (_type_): _description_

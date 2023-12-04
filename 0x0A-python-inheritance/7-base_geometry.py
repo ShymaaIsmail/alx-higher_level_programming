@@ -40,6 +40,7 @@ class BaseGeometry:
             name (_type_): _description_
             value (_type_): _description_
         """
+
         if value.__class__ != int:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:

@@ -26,7 +26,7 @@ class Rectangle(BaseGeometry):
         try:
             self.integer_validator("width", width)
             self.integer_validator("height", height)
-            self.__width = width
-            self.__height = height
+            self.width = width
+            self.height = height
         except (ValueError, TypeError) as e:
             raise e

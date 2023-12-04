@@ -1,35 +1,47 @@
 #!/usr/bin/python3
 """
-Module for basic class implementation
+This is 7-base_geometry
+doc BaseGeometry
+task
+number 7
 """
 
 
 class BaseGeometry:
-    """Basic class named BaseGeometry
     """
+    BaseGeometry
+    Base Class
+    doc
+
+    
+    """
+
+    def __init__(self):
+        """
+        BaseGeometry
+        init function
+        doc
+        """
+        pass
 
     def area(self):
         """
-        Public instance method: raises exception
-        No implementation yet
-        Exception: area() is not implemented
+        area function
+        for geometery
+        calculation
         """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """
-        public instance method: validate value
-        Args :
-            name and value
-        Raises :
-            if value is not an integer: TypeError exception,
-            with the message <name> must be an integer
-            if value is less or equal to 0: raise a ValueError
-            exception with the message <name> must be greater than 0
+        integer_validator
+        validates value:
+        you can assume name is always a string
+        Args:
+            name (_type_): _description_
+            value (_type_): _description_
         """
-
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
-
+        if type(value) is not int:
+            raise TypeError(f"{name} must be an integer")
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError(f"{name} must be greater than 0")

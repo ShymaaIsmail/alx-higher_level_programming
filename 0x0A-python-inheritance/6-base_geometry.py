@@ -13,18 +13,19 @@ class BaseGeometry:
     """
 
 
-def __init__():
-    """
-    BaseGeometry
-    init function
+    def __init__():
+        """
+        BaseGeometry
+        init function
 
-    """
-    pass
+        """
+        pass
 
-def area(self):
-    """
-    area function
-    for geometery
-    calculation
-    """
-    raise Exception("area() is not implemented")
+
+    def area(self):
+        """
+        area function
+        for geometery
+        calculation
+        """
+        raise Exception("area() is not implemented")

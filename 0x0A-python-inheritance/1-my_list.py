@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-This is 1-my_list MyList class doc
+This is 1-my_list
+MyList class doc
+for task 1
 """
 
 
@@ -13,11 +15,16 @@ class MyList(list):
     def __init__(self):
         """
           init function
+          init function
+
         """
         super().__init__()
   
     def print_sorted(self):
-        """print_sorted
+        """
+        print_sorted
+        print_sorted
+
         """
         self.sort()
         print(self)

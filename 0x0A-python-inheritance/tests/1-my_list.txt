@@ -21,17 +21,25 @@ Now use it:
     [1, 2, 3, 4, 5]
 
     >>> my_list = MyList([3, 1, 2])
-        >>> my_list.print_sorted()
-        [1, 2, 3]
+    >>> my_list.print_sorted()
+    [1, 2, 3]
 
-        >>> my_list = MyList([-1, -5, 0, 3])
-        >>> my_list.print_sorted()
-        [-5, -1, 0, 3]
+    >>> my_list = MyList([0])
+    >>> my_list.print_sorted()
+    [0]
 
-        >>> my_list = MyList(['apple', 'banana', 'cherry'])
-        >>> my_list.print_sorted()
-        ['apple', 'banana', 'cherry']
+    >>> my_list =  MyList([1, 1, 1])
+    >>> my_list.print_sorted()
+    [1, 1, 1]
 
-        >>> my_list = MyList([])
-        >>> my_list.print_sorted()
-        []
+    >>> my_list = MyList([-1, -5, 0, 3])
+    >>> my_list.print_sorted()
+    [-5, -1, 0, 3]
+
+    >>> my_list = MyList(['apple', 'banana', 'cherry'])
+    >>> my_list.print_sorted()
+    ['apple', 'banana', 'cherry']
+
+    >>> my_list = MyList([])
+    >>> my_list.print_sorted()
+    []

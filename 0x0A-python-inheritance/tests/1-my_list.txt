@@ -54,3 +54,12 @@ Now use it:
     ..
     TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
+    >>> my_list.append(NULL)
+    Traceback (most recent call last):
+    NameError: name 'NULL' is not defined
+
+    >>> my_list.append(int('inf')) +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    ..
+    ValueError: invalid literal for int() with base 10: 'inf'
+

@@ -16,7 +16,7 @@ class MyInt (int):
         """
         revert eq
         """
-        return self != other
+        return super().__ne__(other)
 
     def __ne__(self, other):
         """

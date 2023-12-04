@@ -43,12 +43,12 @@ class Rectangle(BaseGeometry):
         """
         return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height)
 
-    def __rpr__(self):
-        """__rpr__
+    def __repr__(self):
+        """__repr__
         this is to return
         str version of the rectangle
         """
-        self.__str__()
+        return self.__str__()
 
     def area(self):
         """area

@@ -27,6 +27,7 @@ class BaseGeometry:
         calculation
         """
         raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
         """_summary_
         validates value:

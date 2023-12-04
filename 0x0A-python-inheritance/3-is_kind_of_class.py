@@ -13,7 +13,4 @@ def is_kind_of_class(obj, a_class):
         obj (_type_): _description_
         a_class (_type_): _description_
     """
-    if obj is not None and a_class is not None:
-        return isinstance(obj, a_class)
-    else:
-        return False
+    return isinstance(obj, a_class)

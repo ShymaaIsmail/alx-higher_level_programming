@@ -22,4 +22,4 @@ class MyInt (int):
         """
         revert eq
         """
-        return not self.__eq__
+        return not self.__eq__(other)

@@ -19,5 +19,5 @@ class MyList(list):
     def print_sorted(self):
         """print_sorted
         """
-        super().sort(self)
-        print(super().items)
+        self.sort()
+        print(self)

@@ -29,14 +29,6 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__height = height
 
-    def __print__(self):
-        """
-        print this rectangle w and h
-        stringfied version
-        in a certain format
-        """
-        print(self.__str__())
-
     def __str__(self):
         """
         return this rectangle w and h

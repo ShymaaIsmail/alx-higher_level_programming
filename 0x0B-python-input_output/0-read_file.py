@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""0-read_file module for task 0
+"""
+0-read_file module for task 0
+This is the full doc 
+for this task
 """
 def read_file(filename=""):
     """read_file
@@ -7,6 +10,6 @@ def read_file(filename=""):
     Args:
         filename (str, optional): _description_. Defaults to "".
     """
-    with open(filename, encoding="utf-8") as f:
+    with open(filename, "r", encoding="utf-8") as f:
         read_data = f.read()
         print(f'{read_data}')

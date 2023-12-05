@@ -4,6 +4,7 @@
 
 """
 import json
+import os
 
 
 def load_from_json_file(filename):
@@ -15,6 +16,13 @@ def load_from_json_file(filename):
     Returns:
         _type_: _description_
     """
-    with open(filename, encoding="utf-8") as file:
-        content = file.read()
-        return json.loads(content)
+    if os.path.exists(filename):
+        with open(filename, encoding="utf-8") as file:
+            content = file.read()
+            if len(content) > 0:
+                return json.loads(content)
+            else:
+                return []
+    else:
+        return []
+        

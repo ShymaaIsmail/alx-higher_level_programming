@@ -23,12 +23,15 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """
         to_json
         """
         result = {}
-        for attr, value in self.__dict__.items():
-            if not (isinstance(value, (str)) and len(value) == 0):
-                result[attr] = value
+        if attrs is not None:
+            for attr in attrs:
+                if hasattr(self, attr):
+                    result[attr] = getattr(self, attr)
+        else:
+            return self.__dict__
         return result

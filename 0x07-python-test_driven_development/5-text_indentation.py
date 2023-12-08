@@ -28,5 +28,6 @@ def text_indentation(text):
     for idx in range(0, len(lines)):
         if idx == (len(lines) - 1):
             print(lines[idx].strip(), end="")
+            print("\n")
         else:
             print(lines[idx].strip(), end="\n")

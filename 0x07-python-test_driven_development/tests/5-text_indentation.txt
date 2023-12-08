@@ -29,6 +29,7 @@ This is an 5-text_indentation text file in reStructuredText format.  First impor
     >>> text = "This is another example:"
     >>> text_indentation(text)
     This is another example:
+
     >>> text = "H.D"
     >>> text_indentation(text)
     H.

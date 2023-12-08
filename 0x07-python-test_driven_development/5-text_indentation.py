@@ -12,19 +12,18 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    delimiters = [":", "?", "."]
-    text = text.strip()
 
-    last_index = len(text) - 1
-    while last_index >= 0 and text[last_index].isspace():
-        last_index -= 1
-    
-    for i, char in enumerate(text):
-        print(char, end="")
-        if char in delimiters and i != last_index:
-            print("\n", end="")
+    punctuation_marks = ['.', '?', ':']
+    lines = []
+    current_line = []
 
-    if text and text[last_index] not in delimiters:
-        print("\n")
-    if text and text[-1] not in delimiters:
-        print("\n")
+    for char in text:
+        current_line.append(char)
+        if char in punctuation_marks:
+            lines.append(''.join(current_line).strip())
+            current_line = []
+
+    lines.append(''.join(current_line).strip())
+
+    for line in lines:
+        print(line.strip(), end="\n")

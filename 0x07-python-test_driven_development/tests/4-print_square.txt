@@ -16,8 +16,7 @@ Now use it:
     ###
     ###
 
-    >>> print_square(0)
-    
+    >>> print_square(0)   
     >>> print_square() # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...

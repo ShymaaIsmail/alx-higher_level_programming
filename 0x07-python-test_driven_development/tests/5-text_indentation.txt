@@ -34,3 +34,10 @@ This is an 5-text_indentation text file in reStructuredText format.  First impor
     >>> text_indentation(text)
     H.
     D
+
+    >>> text = "Holberton. School? How are you: John"
+    >>> text_indentation(text)
+    Holberton.
+    School?
+    How are you:
+    John

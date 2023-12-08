@@ -1,0 +1,33 @@
+The ``5-text_indentation`` module
+======================
+
+Using ``text_indentation``
+-------------------
+
+This is an 5-text_indentation text file in reStructuredText format.  First import
+``text_indentation`` from the ``5-text_indentation`` module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+    >>> text = "This is a sample text. It contains multiple sentences? With different punctuation: marks."
+    >>> text_indentation(text)
+    This is a sample text.
+
+    It contains multiple sentences?
+
+    With different punctuation:
+
+    marks.
+
+    >>> text = "No special characters."
+    >>> text_indentation(text)
+    No special characters.
+
+    >>> text = "Only one sentence? No new lines."
+    >>> text_indentation(text)
+    Only one sentence? No new lines.
+
+    >>> text = "This is another example:"
+    >>> text_indentation(text)
+    This is another example:

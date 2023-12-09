@@ -104,9 +104,14 @@ class Rectangle(Base):
 
     def display(self):
         """display"""
-        for r in range(0, self.__height):
-            for c in range(0, self.__width):
-                print("#", end="")
+        for r in range(0, self.__height + self.__y):
+            for c in range(0, self.__width + self.__x):
+                if (r < self.__y):
+                        break
+                if (c < self.__x):
+                    print(" ", end="")
+                else:
+                    print("#", end="")
             print()
 
     def __str__(self):

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+recangle module
 Rectangle Class
 """
 from models.base import Base
@@ -107,7 +108,7 @@ class Rectangle(Base):
         for r in range(0, self.__height + self.__y):
             for c in range(0, self.__width + self.__x):
                 if (r < self.__y):
-                        break
+                    break
                 if (c < self.__x):
                     print(" ", end="")
                 else:
@@ -116,7 +117,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """__str__"""
-        return(f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
+                "{self.__width}/{self.__height}")
 
     def update(self, *args, **kwargs):
         """update"""
@@ -131,4 +133,3 @@ class Rectangle(Base):
             for arg in kwargs:
                 if arg in attributes:
                     setattr(self, arg, kwargs[arg])
-

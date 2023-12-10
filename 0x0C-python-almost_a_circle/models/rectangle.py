@@ -118,7 +118,7 @@ class Rectangle(Base):
     def __str__(self):
         """__str__"""
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
-                "{self.__width}/{self.__height}")
+                f"{self.__width}/{self.__height}")
 
     def update(self, *args, **kwargs):
         """update"""
@@ -133,3 +133,14 @@ class Rectangle(Base):
             for arg in kwargs:
                 if arg in attributes:
                     setattr(self, arg, kwargs[arg])
+
+    def to_dictionary(self):
+        """_summary_
+        """
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }

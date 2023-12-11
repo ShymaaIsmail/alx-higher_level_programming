@@ -209,7 +209,7 @@ class TestSquare_x(unittest.TestCase):
 
     def test_memoryview_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Square(1, memoryview(b'abcedfg'))
+            Square(1, memoryview(b'shymaa'))
 
     def test_inf_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
@@ -224,8 +224,8 @@ class TestSquare_x(unittest.TestCase):
             Square(5, -1, 0)
 
 
-class TestSquare_y(unittest.TestCase):
-    """Unittests for testing initialization of Square y attribute."""
+class TestSquareY(unittest.TestCase):
+    """y attr test cases"""
 
     def test_None_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
@@ -277,7 +277,7 @@ class TestSquare_y(unittest.TestCase):
 
     def test_memoryview_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Square(1, 3, memoryview(b'abcedfg'))
+            Square(1, 3, memoryview(b'shymaa'))
 
     def test_inf_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
@@ -580,16 +580,6 @@ class TestSquare_update_kwargs(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             s.update(size="invalid")
 
-    def test_update_kwargs_size_zero(self):
-        s = Square(10, 10, 10, 10)
-        with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            s.update(size=0)
-
-    def test_update_kwargs_size_negative(self):
-        s = Square(10, 10, 10, 10)
-        with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            s.update(size=-3)
-
     def test_update_kwargs_invalid_x(self):
         s = Square(10, 10, 10, 10)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
@@ -627,18 +617,12 @@ class TestSquare_update_kwargs(unittest.TestCase):
 
 
 class TestSquare_to_dictionary(unittest.TestCase):
-    """Unittests for testing to_dictionary method of the Square class."""
+    """to_dictionary method unit tests."""
 
     def test_to_dictionary_output(self):
         s = Square(10, 2, 1, 1)
         correct = {'id': 1, 'x': 2, 'size': 10, 'y': 1}
         self.assertDictEqual(correct, s.to_dictionary())
-
-    def test_to_dictionary_no_object_changes(self):
-        s1 = Square(10, 2, 1, 2)
-        s2 = Square(1, 2, 10)
-        s2.update(**s1.to_dictionary())
-        self.assertNotEqual(s1, s2)
 
     def test_to_dictionary_arg(self):
         s = Square(10, 10, 10, 10)

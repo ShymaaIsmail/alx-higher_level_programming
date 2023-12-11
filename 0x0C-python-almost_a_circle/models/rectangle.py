@@ -1,140 +1,155 @@
 #!/usr/bin/python3
 
+"""It is a module for class Rectangle
+that inherits directly from Base
 """
-models.rectangle module
-Rectangle Class
-very long text
-"""
+
 from models.base import Base
 
 
-"""
-models.rectangle module
-Rectangle Class
-very long text
-"""
-
-
 class Rectangle(Base):
-    """Rectangle class with private attributes
-    Args: id, width, height, x, y
-    Raises : Type and Value Errors
+    """ Rectangle class as child of Base
+    it has private and specific values
     """
 
-  
-
     def __init__(self, width, height, x=0, y=0, id=None):
-        """_summary_
+        """ constructor to set init value after validations"""
+        super().__init__(id)
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0!")
+        self.__width = width
 
-        Args:
-            width (_type_): _description_
-            height (_type_): _description_
-            x (int, optional): _description_. Defaults to 0.
-            y (int, optional): _description_. Defaults to 0.
-            id (_type_, optional): _description_. Defaults to None.
-        """
-        pass
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = height
+
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be > 0")
+        self.__x = x
+
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be greater than zero!")
+        self.__y = y
 
     def area(self):
-        """area"""
+        """function to calc area of rectangle
+
+        Returns:
+            int: area
+        """
         return self.__width * self.__height
 
     def display(self):
-        """display"""
-        pass
+        """display rectangle with "#"
 
-    def __str__(self):
-        """__str__"""
-        return f"[Rectangle]\
-        ({self.id}){self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        Returns:
+           print "#" according to w and h_
+        """
+
+        for y_val in range(self.__y):
+            print()
+
+        for i in range(self.__height):
+            for x_val in range(self.__x):
+                print(" ", end="")
+            print("#" * self.__width)
 
     def update(self, *args, **kwargs):
-        """update"""
-        pass
+        """set  an arg val to its releavant attr
+        """
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        if (args and len(args) > 0):
+            for i, arg in enumerate(args):
+                if i < len(attributes):
+                    setattr(self, attributes[i], arg)
+                else:
+                    break
+        else:
+            for arg in kwargs:
+                if arg in attributes:
+                    new_value = kwargs[arg]
+                    setattr(self, arg, new_value)
 
-
-
-      """attribute prop"""
-    @property
-    def width(self):
+    def __str__(self):
         """_summary_
 
         Returns:
-            _type_: _description_
+            string representation [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
+        return f"[Rectangle]\
+            ({self.id}){self.__x}/{self.__y} - {self.__width}/{self.__height}"
+
+    """width prop getter"""
+    @property
+    def width(self):
+        """width prop getter"""
         return self.__width
 
     @width.setter
-    def width(self, width):
-        """_summary_
+    def width(self, val):
+        """width prop setter"""
+        if type(val) is not int:
+            raise TypeError("width must be an integer")
+        if val < 0:
+            raise ValueError("width must be greater than zero!")
+        self.__width = val
 
-        Args:
-            width (_type_): _description_
-        """
-        self.__width = width
-
-    """attribute prop"""
+    """height prop"""
     @property
     def height(self):
-        """_summary_
-
-        Returns:
-            _type_: _description_
-        """
         return self.__height
 
     @height.setter
-    def height(self, height):
-        """_summary_
+    def height(self, val):
+        if type(val) is not int:
+            raise TypeError("height must be an integer")
+        if val < 0:
+            raise ValueError("height must be greater than zero!")
 
-        Args:
-            height (_type_): _description_
-        """
-        self.__height = height
+        self.__height = val
 
-    """attribute prop"""
+    """x prop"""
     @property
     def x(self):
-        """_summary_
-
-        Returns:
-            _type_: _description_
-        """
         return self.__x
 
     @x.setter
-    def x(self, x):
-        """_summary_
+    def x(self, val):
+        if type(val) is not int:
+            raise TypeError("x must be an integer")
+        if val < 0:
+            raise ValueError("x must be greater than zero!")
 
-        Args:
-            x (_type_): _description_
-        """
-        self.__x = x
-    """attribute prop"""
+        self.__x = val
+
+    """y prop"""
     @property
     def y(self):
-        """_summary_
-
-        Returns:
-            _type_: _description_
-        """
         return self.__y
 
     @y.setter
-    def y(self, y):
-        """_summary_
+    def y(self, val):
+        if type(val) is not int:
+            raise TypeError("y must be an integer")
+        if val < 0:
+            raise ValueError("y must be > zero!")
 
-        Args:
-            y (_type_): _description_
-        """
-        self.__y = y
+        self.__y = val
 
     def to_dictionary(self):
-        """_summary_   this is very long description
-        """
+        """ to_dictionary to_dictionary """
         return {
-            'width': self.width,
-            'height': self.height,
-            'x': self.x,
-            'y': self.y
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y,
+
         }

@@ -48,19 +48,16 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """display rectangle with "#"
-
-        Returns:
-           print "#" according to w and h_
-        """
-
-        for y_val in range(self.__y):
+        """display # sign to draw rectangle"""
+        for r in range(0, self.__height + self.__y):
+            for c in range(0, self.__width + self.__x):
+                if (r < self.__y):
+                    break
+                if (c < self.__x):
+                    print(" ", end="")
+                else:
+                    print("#", end="")
             print()
-
-        for i in range(self.__height):
-            for x_val in range(self.__x):
-                print(" ", end="")
-            print("#" * self.__width)
 
     def update(self, *args, **kwargs):
         """set  an arg val to its releavant attr

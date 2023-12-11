@@ -9,6 +9,7 @@ import json
 
 class Base:
     """Base Class
+    Attributes
     """
     __nb_objects = 0
     id = 0

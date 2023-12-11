@@ -8,7 +8,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle Class
+    """Rectangle Class  this is very long description
     """
 
     @property
@@ -93,8 +93,8 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize Rectangle"""
-        self.__validate(width, height, x, y)
         super().__init__(id)
+        self.__validate(width, height, x, y)
         self.__width = width
         self.__height = height
         self.__x = x
@@ -180,7 +180,7 @@ class Rectangle(Base):
                     setattr(self, arg, kwargs[arg])
 
     def to_dictionary(self):
-        """_summary_
+        """_summary_   this is very long description
         """
         return {
             'id': self.id,

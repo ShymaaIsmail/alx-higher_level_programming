@@ -21,7 +21,40 @@ class Rectangle(Base):
     Raises : Type and Value Errors
     """
 
-    """attribute prop"""
+  
+
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """_summary_
+
+        Args:
+            width (_type_): _description_
+            height (_type_): _description_
+            x (int, optional): _description_. Defaults to 0.
+            y (int, optional): _description_. Defaults to 0.
+            id (_type_, optional): _description_. Defaults to None.
+        """
+        pass
+
+    def area(self):
+        """area"""
+        return self.__width * self.__height
+
+    def display(self):
+        """display"""
+        pass
+
+    def __str__(self):
+        """__str__"""
+        return f"[Rectangle]\
+        ({self.id}){self.__x}/{self.__y} - {self.__width}/{self.__height}"
+
+    def update(self, *args, **kwargs):
+        """update"""
+        pass
+
+
+
+      """attribute prop"""
     @property
     def width(self):
         """_summary_
@@ -96,52 +129,10 @@ class Rectangle(Base):
         """
         self.__y = y
 
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """_summary_
-
-        Args:
-            width (_type_): _description_
-            height (_type_): _description_
-            x (int, optional): _description_. Defaults to 0.
-            y (int, optional): _description_. Defaults to 0.
-            id (_type_, optional): _description_. Defaults to None.
-        """
-        super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
-
-    def area(self):
-        """area"""
-        return self.__width * self.__height
-
-    def display(self):
-        """display"""
-        for r in range(0, self.__height + self.__y):
-            for c in range(0, self.__width + self.__x):
-                if (r < self.__y):
-                    break
-                if (c < self.__x):
-                    print(" ", end="")
-                else:
-                    print("#", end="")
-            print()
-
-    def __str__(self):
-        """__str__"""
-        return f"[Rectangle]\
-        ({self.id}){self.__x}/{self.__y} - {self.__width}/{self.__height}"
-
-    def update(self, *args, **kwargs):
-        """update"""
-        pass
-
     def to_dictionary(self):
         """_summary_   this is very long description
         """
         return {
-            'id': self.id,
             'width': self.width,
             'height': self.height,
             'x': self.x,

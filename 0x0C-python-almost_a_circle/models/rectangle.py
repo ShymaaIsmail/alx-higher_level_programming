@@ -31,7 +31,6 @@ class Rectangle(Base):
             id (_type_, optional): _description_. Defaults to None.
         """
         super().__init__(id)
-        self.__validate(width, height, x, y)
         self.__width = width
         self.__height = height
         self.__x = x
@@ -49,24 +48,6 @@ class Rectangle(Base):
        """
        if value < 0:
            raise ValueError(f"{name} must be >= 0")
-
-    def __validate(self, width, height, x, y):
-        """_summary_
-
-        Args:
-        width (_type_): _description_
-        height (_type_): _description_
-        x (_type_): _description_
-        y (_type_): _description_
-        """
-        self.__validate_int("width", width)
-        self.__validate_positive("width", width)
-        self.__validate_int("height", height)
-        self.__validate_positive("height", height)
-        self.__validate_int("x", x)
-        self.__validate_non_negative("x", x)
-        self.__validate_int("y", y)
-        self.__validate_non_negative("y", y)
 
     def __validate_int(self, name, value):
         """

@@ -91,7 +91,10 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """create
+        """_summary_
+
+        Returns:
+            _type_: _description_
         """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
@@ -105,7 +108,11 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """load from file"""
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         filename = cls.__name__ + ".json"
         try:
             with open(filename, "r") as file:

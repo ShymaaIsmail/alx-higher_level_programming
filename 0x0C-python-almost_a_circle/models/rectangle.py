@@ -1,14 +1,21 @@
 #!/usr/bin/python3
-"""
-recangle module
-Rectangle Class
 
+"""
+models.rectangle module
+Rectangle Class
+very long text
 """
 from models.base import Base
 
 
+"""
+models.rectangle module
+Rectangle Class
+very long text
+"""
 class Rectangle(Base):
-    """Rectangle Class  this is very long description
+    """Rectangle Class  this is
+    very long description
     """
 
     @property
@@ -92,7 +99,15 @@ class Rectangle(Base):
         self.__y = y
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize Rectangle"""
+        """_summary_
+
+        Args:
+            width (_type_): _description_
+            height (_type_): _description_
+            x (int, optional): _description_. Defaults to 0.
+            y (int, optional): _description_. Defaults to 0.
+            id (_type_, optional): _description_. Defaults to None.
+        """
         super().__init__(id)
         self.__validate(width, height, x, y)
         self.__width = width
@@ -104,10 +119,10 @@ class Rectangle(Base):
         """_summary_
 
         Args:
-            width (_type_): _description_
-            height (_type_): _description_
-            x (_type_): _description_
-            y (_type_): _description_
+        width (_type_): _description_
+        height (_type_): _description_
+        x (_type_): _description_
+        y (_type_): _description_
         """
         self.__validate_int("width", width)
         self.__validate_positive("width", width)
@@ -131,8 +146,14 @@ class Rectangle(Base):
             raise TypeError(f"{name} must be an integer")
 
     def __validate_negative(self, name, value):
-        """
-        __validate_negative
+        """_summary_
+
+        Args:
+            name (_type_): _description_
+            value (_type_): _description_
+
+        Raises:
+            ValueError: _description_
         """
         if value < 0:
             raise ValueError(f"{name} must be >= 0")

@@ -1,17 +1,10 @@
 #!/usr/bin/python3
-"""Defines unittests for models/rectangle.py.
+"""Defines unit 
+tests for models/rectangle.py.
 
 Unittest classes:
-    TestRectangle_instantiation - line 23
-    TestRectangle_width - line 112
-    TestRectangle_height - line 188
-    TestRectangle_x - line 260
-    TestRectangle_y - line 332
-    TestRectangle_order_of_initialization - line 400
-    TestRectangle_area - line 428
-    TestRectangle_update_args - line 536
-    TestRectangle_update_kwargs - line 674
-    TestRectangle_to_dictionary - line 786
+many uint tests
+
 """
 import io
 import sys

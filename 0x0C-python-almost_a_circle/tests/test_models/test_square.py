@@ -1,17 +1,8 @@
 #!/usr/bin/python3
-"""Defines unittests for models/square.py.
+"""Defines unit tests for models/square.py.
 
 Unittest classes:
-    TestSquare_instantiation - line 22
-    TestSquare_size - line 86
-    TestSquare_x - line 164
-    TestSquare_y - line 236
-    TestSquare_order_of_initialization - line 304
-    TestSquare_area - line 320
-    TestSquare_stdout - line 341
-    TestSquare_update_args - line 424
-    TestSquare_update_kwargs - line 536
-    TestSquare_to_dictionary - 638
+    many unit tests
 """
 import io
 import sys

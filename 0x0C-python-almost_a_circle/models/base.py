@@ -71,7 +71,7 @@ class Base:
                 data = cls.to_json_string([obj.to_dictionary()
                                            for obj in list_objs])
         else:
-            file_name = "empty.json"
+            file_name = f"{cls.__name__}.json"
         with open(file_name, 'w', encoding="utf-8") as file:
             file.write(data)
 
@@ -84,7 +84,7 @@ class Base:
         """
         data = []
         if (json_string is not None):
-           data = json.loads(json_string)
+            data = json.loads(json_string)
         return data
 
     @classmethod
@@ -100,3 +100,16 @@ class Base:
 
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """load from file"""
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r") as file:
+                json_data = file.read()
+                data = cls.from_json_string(json_data)
+                instances = [cls.create(**item) for item in data]
+                return instances
+        except FileNotFoundError:
+            return []

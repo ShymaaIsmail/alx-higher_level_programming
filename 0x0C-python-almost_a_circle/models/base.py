@@ -38,6 +38,16 @@ class Base:
 
     @staticmethod
     def check_object_types(list_objs, base_type, type):
+        """_summary_
+
+        Args:
+            list_objs (_type_): _description_
+            base_type (_type_): _description_
+            type (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         if not isinstance(list_objs, list):
             return False
         for obj in list_objs:
@@ -58,8 +68,21 @@ class Base:
             valid_type = cls.check_object_types(list_objs, Base, obj_type)
             if (valid_type):
                 file_name = f"{obj_type}.json"
-                data = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+                data = cls.to_json_string([obj.to_dictionary()
+                                           for obj in list_objs])
         else:
             file_name = "empty.json"
         with open(file_name, 'w', encoding="utf-8") as file:
             file.write(data)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ from_json_string
+
+        Args:
+            json_string (_type_): _description_
+        """
+        data = []
+        if (json_string is not None):
+           data = json.loads(json_string)
+        return data

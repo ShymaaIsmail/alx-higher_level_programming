@@ -64,6 +64,14 @@ class Rectangle(Base):
         self.__y = y
 
     def __validate(self, width, height, x, y):
+        """_summary_
+
+        Args:
+            width (_type_): _description_
+            height (_type_): _description_
+            x (_type_): _description_
+            y (_type_): _description_
+        """
         self.__validate_int("width", width)
         self.__validate_positive("width", width)
         self.__validate_int("height", height)

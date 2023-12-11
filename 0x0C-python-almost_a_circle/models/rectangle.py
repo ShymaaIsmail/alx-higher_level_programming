@@ -17,26 +17,26 @@ class Rectangle(Base):
         super().__init__(id)
         if type(width) is not int:
             raise TypeError("width must be an integer")
-        if width < 0:
-            raise ValueError("width must be >= 0!")
+        if width <= 0:
+            raise ValueError("width must be > 0")
         self.__width = width
 
         if type(height) is not int:
             raise TypeError("height must be an integer")
-        if height < 0:
-            raise ValueError("height must be >= 0")
+        if height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = height
 
         if type(x) is not int:
             raise TypeError("x must be an integer")
         if x < 0:
-            raise ValueError("x must be > 0")
+            raise ValueError("x must be >= 0")
         self.__x = x
 
         if type(y) is not int:
             raise TypeError("y must be an integer")
         if y < 0:
-            raise ValueError("y must be greater than zero!")
+            raise ValueError("y must be >= 0")
         self.__y = y
 
     def area(self):
@@ -84,8 +84,8 @@ class Rectangle(Base):
         Returns:
             string representation [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return f"[Rectangle]\
-            ({self.id}){self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return ("[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
+                self.__x, self.__y, self.__width, self.__height))
 
     """width prop getter"""
     @property
@@ -98,8 +98,8 @@ class Rectangle(Base):
         """width prop setter"""
         if type(val) is not int:
             raise TypeError("width must be an integer")
-        if val < 0:
-            raise ValueError("width must be greater than zero!")
+        if val <= 0:
+            raise ValueError("width must be > 0")
         self.__width = val
 
     """height prop"""
@@ -111,8 +111,8 @@ class Rectangle(Base):
     def height(self, val):
         if type(val) is not int:
             raise TypeError("height must be an integer")
-        if val < 0:
-            raise ValueError("height must be greater than zero!")
+        if val <= 0:
+            raise ValueError("height must be > 0")
 
         self.__height = val
 
@@ -126,7 +126,7 @@ class Rectangle(Base):
         if type(val) is not int:
             raise TypeError("x must be an integer")
         if val < 0:
-            raise ValueError("x must be greater than zero!")
+            raise ValueError("x must be >= 0")
 
         self.__x = val
 
@@ -140,13 +140,14 @@ class Rectangle(Base):
         if type(val) is not int:
             raise TypeError("y must be an integer")
         if val < 0:
-            raise ValueError("y must be > zero!")
+            raise ValueError("y must be >= 0")
 
         self.__y = val
 
     def to_dictionary(self):
         """ to_dictionary to_dictionary """
         return {
+            "id": self.id,
             "width": self.width,
             "height": self.height,
             "x": self.x,

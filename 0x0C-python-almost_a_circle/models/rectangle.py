@@ -2,6 +2,7 @@
 """
 recangle module
 Rectangle Class
+
 """
 from models.base import Base
 

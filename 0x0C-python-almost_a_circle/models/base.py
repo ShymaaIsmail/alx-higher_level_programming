@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-"""base clase
+"""base
+class
 module doc
 """
 import json

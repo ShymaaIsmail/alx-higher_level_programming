@@ -112,7 +112,6 @@ class Rectangle(Base):
             id (_type_, optional): _description_. Defaults to None.
         """
         super().__init__(id)
-        self.__validate(width, height, x, y)
         self.__width = width
         self.__height = height
         self.__x = x
@@ -189,7 +188,20 @@ class Rectangle(Base):
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
                 f"{self.__width}/{self.__height}")
 
-    
+    def update(self, *args, **kwargs):
+        """update"""
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        if (args and len(args) > 0):
+            for i, arg in enumerate(args):
+                if i < len(attributes):
+                    setattr(self, attributes[i], arg)
+                else:
+                    break
+        else:
+            for arg in kwargs:
+                if arg in attributes:
+                    setattr(self, arg, kwargs[arg])
+
     def to_dictionary(self):
         """_summary_   this is very long description
         """

@@ -35,3 +35,31 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def check_object_types(list_objs, base_type, type):
+        if not isinstance(list_objs, list):
+            return False
+        for obj in list_objs:
+            if not isinstance(obj, base_type):
+                return False
+        return True
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """to_json
+
+        Args:
+            list_dictionaries (_type_): _description_
+        """
+        data = "[]"
+        if ((list_objs is not None) and len(list_objs) > 0):
+            obj_type = type(list_objs[0]).__name__
+            valid_type = cls.check_object_types(list_objs, Base, obj_type)
+            if (valid_type):
+                file_name = f"{obj_type}.json"
+                data = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+        else:
+            file_name = "empty.json"
+        with open(file_name, 'w', encoding="utf-8") as file:
+            file.write(data)

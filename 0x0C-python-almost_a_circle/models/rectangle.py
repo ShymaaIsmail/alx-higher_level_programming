@@ -60,7 +60,7 @@ class Rectangle(Base):
             print()
 
     def update(self, *args, **kwargs):
-        """set  an arg val to its releavant attr
+        """set  an arg val to its relevant attr
         """
         attributes = ['id', 'width', 'height', 'x', 'y']
         if (args and len(args) > 0):
@@ -76,13 +76,9 @@ class Rectangle(Base):
                     setattr(self, arg, new_value)
 
     def __str__(self):
-        """_summary_
-
-        Returns:
-            string representation [Rectangle] (<id>) <x>/<y> - <width>/<height>
-        """
-        return ("[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
-                self.__x, self.__y, self.__width, self.__height))
+        """__str__"""
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
+                f"{self.__width}/{self.__height}")
 
     """width prop getter"""
     @property

@@ -16,8 +16,9 @@ very long text
 
 
 class Rectangle(Base):
-    """Rectangle Class  this is
-    very long description
+    """Rectangle class with private attributes
+    Args: width, height, x, y
+    Raises : TypeError, ValueError
     """
 
     @property

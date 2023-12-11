@@ -130,22 +130,12 @@ class Rectangle(Base):
 
     def __str__(self):
         """__str__"""
-        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
-                f"{self.__width}/{self.__height}")
+        return f"[Rectangle]\
+        ({self.id}){self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
         """update"""
-        attributes = ['id', 'width', 'height', 'x', 'y']
-        if (args and len(args) > 0):
-            for i, arg in enumerate(args):
-                if i < len(attributes):
-                    setattr(self, attributes[i], arg)
-                else:
-                    break
-        else:
-            for arg in kwargs:
-                if arg in attributes:
-                    setattr(self, arg, kwargs[arg])
+        pass
 
     def to_dictionary(self):
         """_summary_   this is very long description

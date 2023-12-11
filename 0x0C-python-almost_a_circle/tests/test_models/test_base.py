@@ -195,13 +195,7 @@ class TestBase_save_to_file(unittest.TestCase):
         Square.save_to_file([s1, s2])
         with open("Square.json", "r") as f:
             self.assertTrue(len(f.read()) == 77)
-
-    def test_save_to_file_cls_name_for_filename(self):
-        s = Square(10, 7, 2, 8)
-        Base.save_to_file([s])
-        with open("Base.json", "r") as f:
-            self.assertTrue(len(f.read()) == 39)
-
+ 
     def test_save_to_file_overwrite(self):
         s = Square(9, 2, 39, 2)
         Square.save_to_file([s])

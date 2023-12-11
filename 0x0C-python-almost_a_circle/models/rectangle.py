@@ -16,40 +16,80 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         return self.__width
 
     @width.setter
     def width(self, width):
+        """_summary_
+
+        Args:
+            width (_type_): _description_
+        """
         self.__validate_int("width", width)
         self.__validate_positive("width", width)
         self.__width = width
 
     @property
     def height(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         return self.__height
 
     @height.setter
     def height(self, height):
+        """_summary_
+
+        Args:
+            height (_type_): _description_
+        """
         self.__validate_int("height", height)
         self.__validate_positive("height", height)
         self.__height = height
 
     @property
     def x(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         return self.__x
 
     @x.setter
     def x(self, x):
+        """_summary_
+
+        Args:
+            x (_type_): _description_
+        """
         self.__validate_int("x", x)
         self.__validate_negative("x", x)
         self.__x = x
 
     @property
     def y(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         return self.__y
 
     @y.setter
     def y(self, y):
+        """_summary_
+
+        Args:
+            y (_type_): _description_
+        """
         self.__validate_int("y", y)
         self.__validate_negative("y", y)
         self.__y = y

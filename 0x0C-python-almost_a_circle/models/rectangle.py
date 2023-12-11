@@ -21,6 +21,7 @@ class Rectangle(Base):
     Raises : TypeError, ValueError
     """
 
+    """attribute prop"""
     @property
     def width(self):
         """_summary_
@@ -41,6 +42,7 @@ class Rectangle(Base):
         self.__validate_positive("width", width)
         self.__width = width
 
+    """attribute prop"""
     @property
     def height(self):
         """_summary_
@@ -61,6 +63,7 @@ class Rectangle(Base):
         self.__validate_positive("height", height)
         self.__height = height
 
+    """attribute prop"""
     @property
     def x(self):
         """_summary_
@@ -81,6 +84,7 @@ class Rectangle(Base):
         self.__validate_negative("x", x)
         self.__x = x
 
+    """attribute prop"""
     @property
     def y(self):
         """_summary_
@@ -112,6 +116,7 @@ class Rectangle(Base):
             id (_type_, optional): _description_. Defaults to None.
         """
         super().__init__(id)
+        self.__validate(width, height, x, y)
         self.__width = width
         self.__height = height
         self.__x = x

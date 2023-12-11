@@ -40,7 +40,7 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-        """function to calc area of rectangle
+        """apply area equation to w and h
 
         Returns:
             int: area

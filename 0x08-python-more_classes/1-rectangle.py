@@ -38,8 +38,8 @@ class Rectangle():
     def dict(self):
         """return dictionary representation of object"""
         return {
-            'width': self.width,
-            'height': self.height
+            '_Rectangle__width': self.width,
+            '_Rectangle__height': self.height
         }
 
     def __init__(self, width=0, height=0):

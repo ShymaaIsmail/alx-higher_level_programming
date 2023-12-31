@@ -33,6 +33,7 @@ def n_queens(n):
     board = [-1] * n
     solve_n_queens(board, 0, n)
 
+
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
     exit(1)

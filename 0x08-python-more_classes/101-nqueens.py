@@ -33,14 +33,15 @@ def n_queens(n):
     board = [-1] * n
     solve_n_queens(board, 0, n)
 
-
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
     exit(1)
-if not isinstance(sys.argv[1], int):
+try:
+    n = int(sys.argv[1])
+except ValueError:
     print("N must be a number")
     exit(1)
-if int(sys.argv[1]) < 4:
+if n < 4:
     print("N must be at least 4")
     exit(1)
-n_queens(int(sys.argv[1]))
+n_queens(n)

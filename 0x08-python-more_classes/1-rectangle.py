@@ -41,6 +41,7 @@ class Rectangle():
             'width': self.width,
             'height': self.height
         }
+
     def __init__(self, width=0, height=0):
         """Initialize attributes of the Rectangle object."""
         self.width = width

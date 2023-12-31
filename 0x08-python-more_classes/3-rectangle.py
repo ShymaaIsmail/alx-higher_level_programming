@@ -65,10 +65,11 @@ class Rectangle():
     def __str__(self):
         """Stringify the rectangle object"""
         result = ""
-        for row in range(0, self.height):
-            for column in range(0, self.width):
-                result = result + "#"
-            result = result
-            if (row != self.height - 1):
-                result += "\n"
+        if (self.height > 0 and self.width > 0):
+            for row in range(0, self.height):
+                for column in range(0, self.width):
+                    result = result + "#"
+                result = result
+                if (row != self.height - 1):
+                    result += "\n"
         return result

@@ -34,6 +34,13 @@ class Rectangle():
             raise ValueError("height must be >= 0")
         self._height = value
 
+    @property
+    def dict(self):
+        """return dictionary representation of object"""
+        return {
+            'width': self.width,
+            'height': self.height
+        }
     def __init__(self, width=0, height=0):
         """Initialize attributes of the Rectangle object."""
         self.width = width

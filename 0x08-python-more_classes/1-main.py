@@ -6,4 +6,4 @@ print(my_rectangle.__dict__)
 
 my_rectangle.width = 2
 my_rectangle.height = 3
-print(my_rectangle.__dict__)
+print(sorted(my_rectangle.dict))

@@ -48,10 +48,12 @@ class Rectangle():
         """Initialize attributes of the Rectangle object."""
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     def __del__(self):
         """destructor for the Rectangle object"""
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
 
     def area(self):
         """Calculate Area"""

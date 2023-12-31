@@ -5,9 +5,10 @@ import sys
 
 def is_safe(board, row, col, n):
     """is_safe for placing the queen to avoid conflict"""
-    # Check if a queen can be placed at the given position without attacking others
     for i in range(row):
-        if board[i] == col or board[i] - i == col - row or board[i] + i == col + row:
+        if (board[i] == col
+                or board[i] - i == col - row
+                or board[i] + i == col + row):
             return False
     return True
 
@@ -31,6 +32,7 @@ def n_queens(n):
     """Initialize the board"""
     board = [-1] * n
     solve_n_queens(board, 0, n)
+
 
 if len(sys.argv) != 2:
     print("Usage: nqueens N")

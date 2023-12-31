@@ -87,6 +87,7 @@ class Rectangle():
         """Returns valid python representation for Rectangle"""
         return f"Rectangle({self.width}, {self.height})"
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Compare two rectangles wether to be bigger or equal"""
         if not isinstance(rect_1, Rectangle):

@@ -60,11 +60,15 @@ class Rectangle():
 
     def print(self):
         """Print # rectangle"""
-        self.str()
+        print(self.str())
 
-    def str(self):
+    def __str__(self):
         """Stringify the rectangle object"""
+        result = ""
         for row in range(0, self.height):
             for column in range(0, self.width):
-                print("#", end="")
-            print()
+                result = result + "#"
+            result = result
+            if (row != self.height - 1):
+                result += "\n"
+        return result

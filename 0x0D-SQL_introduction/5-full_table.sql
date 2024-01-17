@@ -1,2 +1,2 @@
 -- 5-full_table.sql
-DESC first_table
+SHOW COLUMNS FROM first_table;

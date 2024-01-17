@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS second_table
 (id INT,
   name VARCHAR(256),
   score int)
-INSERT second_table VALUES
+INSERT second_table
 (1, 'John', 10),
 (2, 'Alex', 3),
 (3, 'Bob', 14),

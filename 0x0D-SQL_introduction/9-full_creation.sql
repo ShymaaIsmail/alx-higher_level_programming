@@ -4,6 +4,8 @@ CREATE TABLE IF NOT EXISTS second_table
   name VARCHAR(256),
   score int)
 INSERT second_table
+(id, name, score)
+VALUES
 (1, 'John', 10),
 (2, 'Alex', 3),
 (3, 'Bob', 14),

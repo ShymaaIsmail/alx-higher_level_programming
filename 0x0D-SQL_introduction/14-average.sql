@@ -1,2 +1,2 @@
 -- 14-average.sql
-SELECT AVG(score) FROM second_table
+SELECT AVG(score) as average FROM second_table

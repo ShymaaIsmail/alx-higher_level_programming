@@ -1,6 +1,4 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
-
 function factorial (n) {
   let fn = 0;
   if (n < 0) {
@@ -12,4 +10,4 @@ function factorial (n) {
   }
   return (fn);
 }
-console.log(factorial(Number(argv[2])));
+console.log(factorial(Number(process.argv[2])));

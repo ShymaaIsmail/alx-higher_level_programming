@@ -1,7 +1,6 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
 
-const num = parseInt(argv[2]);
+const num = parseInt(process.argv[2]);
 
 if (!isNaN(num)) {
   let square = '';

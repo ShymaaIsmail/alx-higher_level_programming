@@ -15,4 +15,4 @@ function factorial (n) {
   }
   return (fn);
 }
-console.log(factorial(argv[2]));
+console.log(factorial(parseInt(argv[2])));

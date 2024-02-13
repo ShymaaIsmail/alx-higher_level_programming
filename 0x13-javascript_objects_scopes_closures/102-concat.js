@@ -23,7 +23,7 @@ fs.readFile(fileA, 'utf8', (err, data1) => {
     // Write combined content to a new file
     fs.writeFile(fileC, combinedContent, (err) => {
       if (err) {
-
+        return NaN;
       }
     });
   });

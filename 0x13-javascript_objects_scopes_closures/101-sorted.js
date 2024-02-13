@@ -1,7 +1,6 @@
 #!/usr/bin/node
 const dict = require('./101-data').dict;
 
-console.log(dict);
 const newDict = Object.fromEntries(
   Object.entries(dict).map(([key, value]) => {
     return [

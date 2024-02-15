@@ -6,7 +6,7 @@ from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
 
-def filter_states():
+def update_states():
     """Fetch all states using sqlalchemy"""
     # create engine
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
@@ -25,4 +25,4 @@ def filter_states():
 
 
 if __name__ == "__main__":
-    filter_states()
+    update_states()

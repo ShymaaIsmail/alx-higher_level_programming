@@ -15,7 +15,7 @@ def filter_states():
     conn = MySQLdb.connect(host=host, port=port, user=user_name,
                            passwd=password, db=database_name, charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC"
+    cur.execute("SELECT * FROM states WHERE BINARY name='{}' ORDER BY id ASC"
                 .format(keyword))
 
     query_rows = cur.fetchall()

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+ r5u57#!/usr/bin/python3
 """City Model"""
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, ForeignKey
@@ -11,4 +11,4 @@ class State(Base):
     id = Column(Integer, primary_key=True, nullable=False, unique=True,
                 autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('state.id'))
+    state_id = Column(Integer, ForeignKey('state.id'), nullable=False)

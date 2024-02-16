@@ -1,4 +1,4 @@
- r5u57#!/usr/bin/python3
+#!/usr/bin/python3
 """City Model"""
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, ForeignKey

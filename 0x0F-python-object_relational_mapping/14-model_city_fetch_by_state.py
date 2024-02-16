@@ -18,9 +18,9 @@ def fetch_all_cities():
     session = Session()
 
     # Query the table and fetch data
-    states = session.query(State).all()
-    for state in states:
-        print(f"{state.id}: {state.name}")
+    cities = session.query(State, City).join(City)
+    for city, state in cities:
+        print(f"{state.name}: ({city.id}): {city.name}")
 
 
 if __name__ == "__main__":

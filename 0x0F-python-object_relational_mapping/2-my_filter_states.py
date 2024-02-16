@@ -15,8 +15,9 @@ def filter_states():
     conn = MySQLdb.connect(host=host, port=port, user=user_name,
                            passwd=password, db=database_name, charset="utf8")
     cur = conn.cursor()
-    cur.execute(f"SELECT * FROM states WHERE name LIKE '%{keyword}%' "
-                "ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC"
+                .format('%' + keyword + '%'))
+
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)

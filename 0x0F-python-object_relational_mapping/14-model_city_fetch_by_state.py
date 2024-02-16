@@ -20,7 +20,7 @@ def fetch_all_cities():
     # Query the table and fetch data
     cities = session.query(City, State).join(State)
     for city, state in cities:
-        print(f"{state.name}: ({city.id}): {city.name}")
+        print(f"{state.name}: ({city.id}) {city.name}")
 
 
 if __name__ == "__main__":

@@ -1,3 +1,3 @@
 #!/bin/bash
 # print response size 
-curl  -s  -w "%{size_header}\n" -o "/dev/null" "$1"
+curl  -s  -w "%{size_download}\n" -o "/dev/null" "$1"

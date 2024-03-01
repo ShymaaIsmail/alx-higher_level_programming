@@ -1,3 +1,3 @@
 #!/bin/bash
 # print response size
-curl -s -o /dev/null -w "%{http_code}" "$1" | grep -q "^200$" && curl -s "$1"
+curl -Is "$1" | grep -w 'Content-Length' | cut -f2 -d' '

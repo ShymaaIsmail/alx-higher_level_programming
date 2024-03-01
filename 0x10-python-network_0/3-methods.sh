@@ -1,3 +1,3 @@
 #!/bin/bash
 # print response size 
-curl -sI -w "%{method}\n" -o /dev/null  "$1"
+curl -sI "$1" | grep "Allow" | cut -d " " -f2-

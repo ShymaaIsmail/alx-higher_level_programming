@@ -1,3 +1,3 @@
 #!/bin/bash
 # print response size
-curl -s -w "%{http_code}" -o response.txt "$1" | grep -q "^200$" && cat response.txt
+curl -s -o /dev/null -w "%{http_code}" "$1" | grep -q "^200$" && curl -s "$1"

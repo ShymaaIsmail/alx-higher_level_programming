@@ -9,6 +9,6 @@ if __name__ == "__main__":
                                 'status') as response:
         status = response.read()
         print("Body response:")
-        print(f"   - type: {type(status)}")
-        print(f"   - content: {status}")
-        print(f"   - utf8 content: {status.decode('utf-8')}")
+        print(f"\t- type: {type(status)}")
+        print(f"\t- content: {status}")
+        print(f"\t- utf8 content: {status.decode('utf-8')}")

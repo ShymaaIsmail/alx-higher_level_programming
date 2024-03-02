@@ -7,8 +7,8 @@ if __name__ == "__main__":
     import sys
 
     data = {'email': sys.argv[2]}
-    request = {'method': 'POST', 'url': sys.argv[1], 'data': data}
+    request = urllib.request.Request(sys.argv[1], data)
     with urllib.request.urlopen(request) as response:
         content = response.read()
-        print({content.decode('utf-8')})
+        print(content.decode('utf-8'))
 

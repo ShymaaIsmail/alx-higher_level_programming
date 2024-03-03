@@ -9,8 +9,10 @@ if __name__ == "__main__":
     querystring = sys.argv[1] if len(sys.argv) >= 2 else ""
     with requests.post("http://0.0.0.0:5000/search_user",
                        data={'q': querystring}) as response:
-        data = response.json()
-        if data:
-            print("[{}] {}".format(data.get('id'), data.get('name')))
-        else:
-            print("No result")
+        content_type = response.headers.get('content-type', '')
+        if 'application/json' in content_type:
+            data = response.json()
+            if data:
+                print("[{}] {}".format(data.get('id'), data.get('name')))
+            else:
+                print("No result")

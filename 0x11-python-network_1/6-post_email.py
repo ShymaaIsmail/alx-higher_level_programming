@@ -9,4 +9,4 @@ if __name__ == "__main__":
     data = {'email': sys.argv[2]}
     with requests.post(sys.argv[1], data) as response:
         content = response.text
-        print(content.decode('utf-8'))
+        print(content)

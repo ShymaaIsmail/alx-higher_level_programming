@@ -6,12 +6,16 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    headers = {"Accept": "application/vnd.github.VERSION.sha"}
-    with requests.get(f"https://api.github.com/repos/"
-                      "{sys.argv[2]}/{sys.argv[1]}/commits/master",
-                      headers=headers) as response:
+    headers = {"Accept": "application/vnd.github+json"}
+    params = {"per_page": 10}
+    user = sys.argv[2]
+    repo = sys.argv[1]
+
+    with requests.get(f"https://api.github.com/repos/{user}/{repo}/commits",
+                      headers=headers, params=params) as response:
         try:
             commits = response.json()
-            print(commits)
+            for commit in commits:
+                print(f"{commit['sha']}: {commit['commit']['author']['name']}")
         except Exception:
             print("None")

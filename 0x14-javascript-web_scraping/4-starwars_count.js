@@ -7,6 +7,9 @@ http.get(url, function (error, response, body) {
     return;
   }
   const result = JSON.parse(body);
-  const movies = result.results.filter(a => a.characters.includes('https://swapi-api.alx-tools.com/api/people/18/'));
+  const movies = result.results.filter(a => 
+    {
+        return a.characters.some(character => character.endsWith('/18/'));
+    });
   console.log(movies.length);
 });
